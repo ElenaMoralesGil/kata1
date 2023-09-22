@@ -27,4 +27,12 @@ public class Person {
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
+
+    public int getAge(){
+        return toYears(LocalDate.now().toEpochDay() - birthday.toEpochDay());
+    }
+
+    private int toYears(long days) {
+        return (int) (days/265.25);
+    }
 }
